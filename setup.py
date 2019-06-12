@@ -1,16 +1,16 @@
 from distutils.core import setup
 setup(
-  name = 'pplot',
-  packages = ['pplot'],
+  name = 'plotml',
+  packages = ['plotml'],
   version = '0.1',
   license='MIT',
   description = 'Some neat plotting functions for ML',
   author = 'Patrick Schrempf',
   author_email = 'pschrempf@outlook.com',
-  url = 'https://github.com/pschrempf/pplot',
-  download_url = 'https://github.com/pschrempf/pplot/archive/0.1.tar.gz',    # I explain this later on
+  url = 'https://github.com/pschrempf/plotml',
+  download_url = 'https://github.com/pschrempf/pplot/archive/0.1.tar.gz',  
   keywords = ['plot', 'machine-learning'],
-  install_requires=[            # I get to this in a second
+  install_requires=[           
           'numpy',
           'matplotlib',
           'itertools',
