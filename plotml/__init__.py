@@ -1,1 +1,1 @@
-from pplot.sklearn import plot_confusion_matrix
+from plotml.sklearn import plot_confusion_matrix

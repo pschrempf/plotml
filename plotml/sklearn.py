@@ -84,6 +84,7 @@ def plot_confusion_matrix(cm,
     ax.set_yticklabels(labels)
     ax.set_xticks(tick_marks)
     ax.set_xlabel(f'\nOverall Accuracy={accuracy:0.4f}')
+    ax.set_ylim((-.5,cm.shape[1]-.5))
     ax.tick_params(axis='both', which='both', pad=15)
     ax.tick_params(axis='y', which='minor', labelrotation=90)
 
