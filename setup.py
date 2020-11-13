@@ -1,8 +1,9 @@
-from distutils.core import setup
-setup(
+import setuptools
+
+setuptools.setup(
   name = 'plotml',
   packages = ['plotml'],
-  version = '0.2.post1',
+  version = '0.2.4',
   license='MIT',
   description = 'Some neat plotting functions for ML',
   author = 'Patrick Schrempf',
@@ -10,10 +11,8 @@ setup(
   url = 'https://github.com/pschrempf/plotml',
   download_url = 'https://github.com/pschrempf/plotml/archive/0.2.tar.gz',  
   keywords = ['plot', 'machine-learning'],
-  install_requires=[           
-          'numpy',
-          'matplotlib',
-  ],
+  install_requires=['numpy', 'matplotlib'],
+  setup_requires=['wheel'],
   classifiers=[
     'Development Status :: 3 - Alpha',
     'Intended Audience :: Developers',

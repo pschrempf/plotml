@@ -2,7 +2,8 @@ def plot_confusion_matrix(cm,
                           labels,
                           title='Confusion matrix',
                           cmap=None,
-                          norm=False):
+                          norm=False,
+			  figname=None):
     """
     given a sklearn confusion matrix (cm), create a matplotlib figure
 
@@ -21,6 +22,9 @@ def plot_confusion_matrix(cm,
 
     norm:         If False, plot the raw numbers
                   If True, plot the proportions
+
+    figname:      If None, don't save figure
+                  If set to a string, save figure to that location
 
     Usage
     -----
@@ -85,6 +89,7 @@ def plot_confusion_matrix(cm,
     ax.set_xticks(tick_marks)
     ax.set_xlabel(f'\nOverall Accuracy={accuracy:0.4f}')
     ax.set_ylim((-.5,cm.shape[1]-.5))
+    ax.set_ylim(ax.get_ylim()[::-1])
     ax.tick_params(axis='both', which='both', pad=15)
     ax.tick_params(axis='y', which='minor', labelrotation=90)
 
@@ -110,7 +115,12 @@ def plot_confusion_matrix(cm,
     cb = colorbar.ColorbarBase(cbax, cmap=cmap, orientation='vertical')
     cb.set_label('Accuracy per label')
 
-    plt.show()
+    if figname is not None:
+        plt.tight_layout()
+        fig.savefig(figname)
+    else:
+        plt.show()
+
 
 if __name__ == '__main__':
     import numpy as np
